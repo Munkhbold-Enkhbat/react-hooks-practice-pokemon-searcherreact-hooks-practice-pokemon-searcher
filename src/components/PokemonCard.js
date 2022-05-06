@@ -14,7 +14,7 @@ function PokemonCard({ pokemon }) {
         <div className="extra content">
           <span>
             <i className="icon heartbeat red" />
-            {pokemon.hp}
+            {pokemon.hp} hp
           </span>
         </div>
       </div>
