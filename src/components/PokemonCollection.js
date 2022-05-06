@@ -4,14 +4,14 @@ import { Card } from "semantic-ui-react";
 
 function PokemonCollection({ pokemons, foundPokemon }) {
   function renderPokemons() {
-    // console.log("foundPokemon from Collection:", foundPokemon);
-    if(foundPokemon) {
-      return (<PokemonCard pokemon={foundPokemon}/>)
-    } else {
+    // console.log("foundPokemon's name:", foundPokemon.name)
+    if(foundPokemon.name === undefined) {
       return pokemons.map(pokemon => {
         return <PokemonCard key={pokemon.id} pokemon={pokemon}/>
-      })
-    }    
+      }) 
+    } else {
+      return <PokemonCard pokemon={foundPokemon}/>
+    }  
   }
 
   return (

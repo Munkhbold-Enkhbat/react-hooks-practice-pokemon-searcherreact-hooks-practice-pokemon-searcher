@@ -16,7 +16,6 @@ function PokemonPage() {
 
   const handleChange = (e) => {
     const searchPokemon = pokemons.find(pokemon => pokemon.name === e.target.value)
-    console.log("searchPokemon:", searchPokemon);
     setFoundPokemon(searchPokemon)
   } 
 
