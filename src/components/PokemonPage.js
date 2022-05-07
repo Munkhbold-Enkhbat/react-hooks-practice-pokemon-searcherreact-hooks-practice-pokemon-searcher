@@ -6,7 +6,7 @@ import { Container } from "semantic-ui-react";
 
 function PokemonPage() {
   const [pokemons, setPokemons] = useState([])
-  const [foundPokemon, setFoundPokemon] = useState({})
+  const [pokemonSearch, setPokemonSearch] = useState('')
 
   useEffect(() => {
     fetch("http://localhost:3001/pokemon")
@@ -15,8 +15,7 @@ function PokemonPage() {
   }, [])
 
   const handleChange = (e) => {
-    const searchPokemon = pokemons.find(pokemon => pokemon.name === e.target.value)
-    setFoundPokemon(searchPokemon)
+    setPokemonSearch(e.target.value)
   } 
 
   return (
@@ -27,7 +26,7 @@ function PokemonPage() {
       <br />
       <Search handleChange={handleChange}/>
       <br />
-      <PokemonCollection pokemons={pokemons} foundPokemon={foundPokemon}/>
+      <PokemonCollection pokemons={pokemons} pokemonSearch={pokemonSearch}/>
     </Container>
   );
 }
