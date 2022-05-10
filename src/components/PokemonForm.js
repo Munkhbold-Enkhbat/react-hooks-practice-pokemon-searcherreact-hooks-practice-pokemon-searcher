@@ -11,12 +11,20 @@ function PokemonForm({ pokemons, setPokemons}) {
     }
   })
 
-  console.log("newPokemon:", newPokemon);
-
   const handleChange = (e) => {
-    console.log("e.target.name:", e.target.name);
-    console.log("e.target.value:", e.target.value);
     setNewPokemon({...newPokemon, [e.target.name]: e.target.value})
+  }
+
+  const handleFrontImageChange = (e) => {
+    setNewPokemon({...newPokemon, sprites: {...newPokemon.sprites,
+      front: e.target.value
+    }})
+  }
+
+  const handleBackImageChange = (e) => {
+    setNewPokemon({...newPokemon, sprites: {...newPokemon.sprites,
+      back: e.target.value
+    }})
   }
 
   const handleAddPokemon = (aPokemon) => {
@@ -28,7 +36,6 @@ function PokemonForm({ pokemons, setPokemons}) {
       <h3>Add a Pokemon!</h3>
       <Form
         onSubmit={(e) => {
-          console.log("submitting form...");
           e.preventDefault();
           const createdPokemon = {
             name: newPokemon.name,
@@ -59,7 +66,7 @@ function PokemonForm({ pokemons, setPokemons}) {
             placeholder="url"
             name="frontUrl"
             value={newPokemon.sprites.front}
-            onChange={handleChange}
+            onChange={handleFrontImageChange}
           />
           <Form.Input
             fluid
@@ -67,7 +74,7 @@ function PokemonForm({ pokemons, setPokemons}) {
             placeholder="url"
             name="backUrl"
             value={newPokemon.sprites.back}
-            onChange={handleChange}
+            onChange={handleBackImageChange}
           />
         </Form.Group>
         <Form.Button>Submit</Form.Button>
