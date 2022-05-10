@@ -41,8 +41,8 @@ function PokemonForm({ pokemons, setPokemons}) {
             name: newPokemon.name,
             hp: newPokemon.hp,
             sprites: {
-              front: newPokemon.front,
-              back: newPokemon.back
+              front: newPokemon.sprites.front,
+              back: newPokemon.sprites.back
             }
           }
 
