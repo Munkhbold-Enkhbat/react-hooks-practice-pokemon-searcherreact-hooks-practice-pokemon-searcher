@@ -4,15 +4,18 @@ import { Form } from "semantic-ui-react";
 function PokemonForm({ pokemons, setPokemons}) {
   const [newPokemon, setNewPokemon] = useState({
     name: '',
-    hp:0,
+    hp:'',
     sprites: {
       front: '',
       back: ''
     }
   })
 
+  console.log("newPokemon:", newPokemon);
+
   const handleChange = (e) => {
-    // console.log("newPokemon.sprites.front:", newPokemon.sprites.front);
+    console.log("e.target.name:", e.target.name);
+    console.log("e.target.value:", e.target.value);
     setNewPokemon({...newPokemon, [e.target.name]: e.target.value})
   }
 

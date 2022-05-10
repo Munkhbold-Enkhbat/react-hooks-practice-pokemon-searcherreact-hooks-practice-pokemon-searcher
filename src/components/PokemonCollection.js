@@ -3,7 +3,6 @@ import PokemonCard from "./PokemonCard";
 import { Card } from "semantic-ui-react";
 
 function PokemonCollection({ pokemons, searchPokemon }) {
-  // debugger
   const pokemonsToDisplay = pokemons.filter(pokemon => searchPokemon ? 
     pokemon.name.includes(searchPokemon) : true)    
  
