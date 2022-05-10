@@ -12,6 +12,7 @@ function PokemonForm({ pokemons, setPokemons}) {
   })
 
   const handleChange = (e) => {
+    // console.log("newPokemon.sprites.front:", newPokemon.sprites.front);
     setNewPokemon({...newPokemon, [e.target.name]: e.target.value})
   }
 
